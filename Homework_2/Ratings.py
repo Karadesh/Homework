@@ -10,9 +10,10 @@ rating = [7 , 5 , 3 , 3 , 3 , 2]
 overseer = False                                  #Задаем переменную, которая меняется с False на True при определенных условиях
 new_element = int(input('Введите новый элемент рейтинга: '))
 for element in rating[:]:
-  if new_element == element:                      #Сравниваем значение, которое ввел пользователь с каждым элементом списка
+  if new_element >= element:                      #Сравниваем значение, которое ввел пользователь с каждым элементом списка
       rating.insert(rating.index(element) , new_element)
-      overseer = True                              # Меняем значение переменной при выполнении условия
+      overseer = True
+      break
 if overseer == False:
       rating.insert(0, new_element)                 #Добавляем элемент в начало списка, если нет совпадений
 print(rating)
